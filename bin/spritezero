@@ -7,7 +7,7 @@ var multiline = require('multiline');
 var path = require('path');
 var stringify = require('json-stable-stringify');
 var argv = require('minimist')(process.argv.slice(2), {
-    boolean: ['retina', 'unique', 'h', 'help']
+    boolean: ['retina', 'unique', 'sdf', 'h', 'help']
 });
 
 function filepaths (dir) {
@@ -43,6 +43,7 @@ if (argv.help || argv._.length < 2) {
 
 var ratio = 1;
 var unique = false;
+var sdf = false;
 
 if (argv.retina) {
     ratio = 2;
@@ -52,6 +53,10 @@ if (argv.retina) {
 
 if (argv.unique) {
     unique = true;
+}
+
+if (argv.sdf) {
+    sdf = true;
 }
 
 var outfile = argv._[0];
@@ -99,6 +104,6 @@ q.awaitAll(function (err, buffers) {
     }
 
     var genLayout = unique ? spritezero.generateLayoutUnique : spritezero.generateLayout;
-    genLayout({ imgs: buffers, pixelRatio: ratio, format: true }, saveLayout);
-    genLayout({ imgs: buffers, pixelRatio: ratio, format: false }, saveImage);
+    genLayout({ imgs: buffers, pixelRatio: ratio, sdf: sdf, format: true }, saveLayout);
+    genLayout({ imgs: buffers, pixelRatio: ratio, sdf: sdf, format: false }, saveImage);
 });
