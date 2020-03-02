@@ -1,5 +1,10 @@
 :warning: = breaking change
 
+## 3.0.0
+##### 2020-02-26
+* Update to @elastic/spritezero@6.2.0
+* Add option to generate sprites with signed distance fields
+
 ## 2.1.0
 ##### 2017-jun-17
 * Update to spritezero 5.0.0
