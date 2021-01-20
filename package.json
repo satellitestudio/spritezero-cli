@@ -1,11 +1,11 @@
 {
-  "name": "@elastic/spritezero-cli",
-  "version": "3.0.0",
+  "name": "@satellitestudio/spritezero-cli",
+  "version": "3.0.1",
   "main": "index.js",
   "description": "a command-line interface for spritezero generation of raster sprites from SVG input",
   "author": "Tom MacWright",
   "license": "ISC",
-  "repository": "elastic/spritezero-cli",
+  "repository": "satellitestudio/spritezero-cli",
   "bugs": "https://github.com/elastic/spritezero-cli/issues",
   "bin": {
     "spritezero": "bin/spritezero"
